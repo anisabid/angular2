@@ -11,16 +11,58 @@
     <li><a href=""> {{hero.name}} details!</a></li>
   </ul>
 
-  <div class="card" style="width: 20rem;">
-    <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
-         alt="Card image cap">
-    <div class="card-body">
-      <h4 class="card-title">{{hero.id}}</h4>
-      <p class="card-text">
-        <label>name : </label>
-        <input [(ngModel)]="hero.name" placeholder="name">
-      </p>
-      <a href="#" class="btn btn-primary">update</a>
+  <div class="row">
+    <div class="col-md-3 mb-3" *ngFor="let user of users">
+      <div class="card testimonial-card ">
+        <div class="card-wrapper">
+
+          <!--
+          <div class="card-up">
+            <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
+                 alt="Card image cap">
+            <div class="avatar">
+              <img alt="{{user.name.fullName}}" class="rounded-circle img-thumbnail" [src]="user.picture.large" >
+            </div>
+          </div>
+          -->
+
+          <div class="card-body text-center">
+            <small>Hi, {{getDesignation(user.gender)}}</small>
+            <h5 class="card-title">
+              <div>{{user.name.fullName}}</div>
+            </h5>
+
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="" class="btn btn-sm btn-link" (mouseenter)="eventHoder('Hi, ' + getDesignation(user.gender) )">
+                  <i class="fa fa-user-o text-secondary"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="" class="btn btn-sm btn-link">
+                  <i class="fa fa-envelope-o text-secondary"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="" class="btn btn-sm btn-link">
+                  <i class="fa fa-calendar text-secondary"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="" class="btn btn-sm btn-link">
+                  <i class="fa fa-map-marker text-secondary"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="" class="btn btn-sm btn-link">
+                  <i class="fa fa-phone text-secondary"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
 </div>
