@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {Hero} from "./entity/hero.model";
 import {User} from "./user/user.model";
 import {UserService} from "./user/user.service";
+import {UserComponent} from './user/user.component';
 
 @Component({
   selector: 'app-root',
@@ -25,13 +26,5 @@ export class AppComponent implements OnInit {
     console.log("AppComponent: OnInit()");
   }
 
-  getDesignation(gender) {
-    return (gender === 'men') ? 'Mr.' : 'M.';
-  }
-
-  eventHoder(x){
-    console.log(x);
-    return false;
-  }
 
 }
