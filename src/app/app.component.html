@@ -1,67 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
-  <h1 class="h1">
-    {{title}}!
-  </h1>
-  <div class="text-center">
+
+  <H1 class="text-center">
     <img width="100"
          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-  </div>
-  <ul class="list-unstyled">
-    <li><a href=""> {{hero.name}} details!</a></li>
-  </ul>
+  </H1>
 
   <div class="row">
-    <div class="col-md-3 mb-3" *ngFor="let user of users">
-      <div class="card testimonial-card ">
-        <div class="card-wrapper">
-
-          <!--
-          <div class="card-up">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
-                 alt="Card image cap">
-            <div class="avatar">
-              <img alt="{{user.name.fullName}}" class="rounded-circle img-thumbnail" [src]="user.picture.large" >
-            </div>
-          </div>
-          -->
-
-          <div class="card-body text-center">
-            <small>Hi, {{getDesignation(user.gender)}}</small>
-            <h5 class="card-title">
-              <div>{{user.name.fullName}}</div>
-            </h5>
-
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="" class="btn btn-sm btn-link" (mouseenter)="eventHoder('Hi, ' + getDesignation(user.gender) )">
-                  <i class="fa fa-user-o text-secondary"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="" class="btn btn-sm btn-link">
-                  <i class="fa fa-envelope-o text-secondary"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="" class="btn btn-sm btn-link">
-                  <i class="fa fa-calendar text-secondary"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="" class="btn btn-sm btn-link">
-                  <i class="fa fa-map-marker text-secondary"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="" class="btn btn-sm btn-link">
-                  <i class="fa fa-phone text-secondary"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <div class="col-md-4 mb-3" *ngFor="let user of users">
+      <app-user [user]="user"></app-user>
     </div>
   </div>
 
