@@ -1,39 +1,55 @@
-<div class="card testimonial-card ">
-  <div class="card-wrapper">
+<mat-card class="card testimonial-card mat-elevation-z">
 
-    <div class="card-body text-center">
-      <small>{{info.text}}</small>
-      <h5 class="card-title">
-        <div>{{info.val}}</div>
-      </h5>
 
-      <ul class="list-inline">
-        <li class="list-inline-item">
-          <a href="" class="btn btn-sm btn-link" (mouseenter)="setInfo('Hi, ' + getDesignation(user.gender), user.name.fullName )">
-            <i class="fa fa-user-o text-secondary"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a href="" class="btn btn-sm btn-link" (mouseenter)="setInfo('My email address is', user.email )">
-            <i class="fa fa-envelope-o text-secondary"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a href="" class="btn btn-sm btn-link" (mouseenter)="setInfo('My birthday is', getBirthYear(user.age) )">
-            <i class="fa fa-calendar text-secondary"></i>
-          </a>
-        </li>
-        <!--li class="list-inline-item">
-          <a href="" class="btn btn-sm btn-link" (mouseenter)="setInfo('My address is', user.address )">
-            <i class="fa fa-map-marker text-secondary"></i>
-          </a>
-        </li-->
-        <li class="list-inline-item">
-          <a href="" class="btn btn-sm btn-link" (mouseenter)="setInfo('My phone number is', user.phone )">
-            <i class="fa fa-phone text-secondary"></i>
-          </a>
-        </li>
-      </ul>
+  <header class="d-flex bd-highlight mb-3">
+    <div class="pull-left align-baseline mr-auto">
+      <div class="d-flex">
+        <img mat-card-avatar [src]="user.picture.thumbnail" class="mr-2">
+        <div class="sr-only">
+          <mat-card-subtitle class="small p-0 mb-1">Hi</mat-card-subtitle>
+          <mat-card-title class="h6 p-0 m-0">{{user.name.fullName}}</mat-card-title>
+        </div>
+      </div>
+
     </div>
-  </div>
-</div>
+    <ul class="list-inline align-self-center m-0">
+      <li class="list-inline-item" matTooltip="User" matTooltipPosition="above">
+        <a href="" class="btn btn-sm btn-link"
+           (mouseenter)="setInfo('Hi, ' + getDesignation(user.gender), user.name.fullName )">
+          <i class="fa fa-user-o text-secondary"></i>
+        </a>
+      </li>
+      <li class="list-inline-item" matTooltip="Email" matTooltipPosition="above">
+        <a href="" class="btn btn-sm btn-link" (mouseenter)="setInfo('My email address is', user.email )">
+          <i class="fa fa-envelope-o text-secondary"></i>
+        </a>
+      </li>
+      <li class="list-inline-item" matTooltip="Birthday" matTooltipPosition="above">
+        <a href="" class="btn btn-sm btn-link" (mouseenter)="setInfo('My birthday is', getBirthYear(user.age) )">
+          <i class="fa fa-calendar text-secondary"></i>
+        </a>
+      </li>
+      <!--li class="list-inline-item" matTooltip="Adress" matTooltipPosition="above">
+        <a href="" class="btn btn-sm btn-link" (mouseenter)="setInfo('My address is', user.address )">
+          <i class="fa fa-map-marker text-secondary"></i>
+        </a>
+      </li-->
+      <li class="list-inline-item" matTooltip="Phone" matTooltipPosition="above">
+        <a href="" class="btn btn-sm btn-link" (mouseenter)="setInfo('My phone number is', user.phone )">
+          <i class="fa fa-phone text-secondary"></i>
+        </a>
+      </li>
+    </ul>
+  </header>
+
+
+  <mat-card-content>
+
+    <small>{{info.text}}</small>
+    <h3 class="mat-h4 card-title">{{info.val}}</h3>
+  </mat-card-content>
+
+
+
+</mat-card>
+

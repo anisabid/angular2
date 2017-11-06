@@ -15,9 +15,14 @@ export class UserService {
   }
 
   private users:Array<User> = null;
+  private count:number = 0;
 
   public getUsers():Array<User> {
     return this.users;
+  }
+
+  public getCountUsers():number {
+    return this.count;
   }
 
   loadUsers() {
@@ -27,7 +32,8 @@ export class UserService {
         .get(this.api.users)
         .map(res => res.json())
         .subscribe(response => {
-          this.users = response;
+          this.count = response.count;
+          this.users = response.results;
           console.log("Users loading complete");
           resolve(true);
         })
